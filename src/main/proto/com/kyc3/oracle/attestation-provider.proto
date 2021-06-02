@@ -1,0 +1,6 @@
+syntax = 'proto3';
+
+message AttestationProviderRegister {
+  string name = 1;
+  string transaction = 2;
+}
