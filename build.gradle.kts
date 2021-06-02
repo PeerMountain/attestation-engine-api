@@ -11,6 +11,7 @@ plugins {
     id("com.google.protobuf") version "0.8.11"
     kotlin("jvm") version "1.3.61"
     id("org.ajoberstar.grgit") version "4.0.1"
+    id("com.github.node-gradle.node") version "3.1.0"
 }
 
 description = "Protobuf Registry"
