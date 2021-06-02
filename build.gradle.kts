@@ -15,14 +15,13 @@ plugins {
 
 description = "Protobuf Registry"
 group = "com.kyc3"
-val grgit = Grgit.open()
+
+val grgit = Grgit.open(mapOf("dir" to project.projectDir))
 val commit = grgit.head().abbreviatedId
 version = commit
 
 val protoDir: File = sourceSets["main"].proto.srcDirs.first()
 
-val grpcVersion = "1.30.2"
-val grpcKotlinVersion = "0.1.4"
 val protoVersion = File("$protoDir/prototool.yaml").useLines { lines ->
     lines.first { it.contains("version:") }.substringAfter(':').trim()
 }
@@ -31,14 +30,9 @@ dependencies {
     api(platform("com.google.protobuf:protobuf-bom:$protoVersion"))
     api("com.google.protobuf:protobuf-java")
     api("com.google.protobuf:protobuf-java-util")
-    api("com.google.api.grpc:proto-google-common-protos:1.17.0")
 
     implementation(platform(kotlin("bom")))
     implementation(kotlin("stdlib"))
-
-    compileOnly(platform("io.grpc:grpc-bom:$grpcVersion"))
-    compileOnly("io.grpc:grpc-protobuf")
-    compileOnly("io.grpc:grpc-stub")
 
     val junitVersion = "5.6.0"
     testImplementation(platform("org.junit:junit-bom:$junitVersion"))
@@ -48,17 +42,6 @@ dependencies {
 }
 
 java {
-    registerFeature("grpc") {
-        usingSourceSet(sourceSets.main.get())
-    }
-
-    dependencies {
-        "grpcApi"(platform("io.grpc:grpc-bom:$grpcVersion"))
-        "grpcApi"("io.grpc:grpc-netty-shaded")
-        "grpcApi"("io.grpc:grpc-protobuf")
-        "grpcApi"("io.grpc:grpc-stub")
-    }
-
     withSourcesJar()
 }
 
@@ -66,6 +49,7 @@ val protoJar by tasks.registering(Jar::class) {
     group = "build"
     description = "Assembles a JAR containing the Protobuf files."
     archiveClassifier.set("proto")
+
     from(sourceSets["main"].proto) {
         exclude("**/*.md", "**/*.yaml")
     }
@@ -74,7 +58,7 @@ val protoJar by tasks.registering(Jar::class) {
 publishing {
     publications {
         register("mavenJava", MavenPublication::class) {
-            artifactId = "mocchi-definitions"
+            artifactId = "oracle-definitions"
             from(components["java"])
             artifact(protoJar.get())
             suppressAllPomMetadataWarnings()
@@ -107,11 +91,11 @@ protobuf {
         all().forEach { task ->
             task.plugins {
                 id("ts") {
-                    outputSubDir = "java"
+                    outputSubDir = "ts"
                 }
             }
             task.builtins {
-                id("ts") {
+                id("js") {
                     option("import_style=commonjs")
                     option("binary")
                 }

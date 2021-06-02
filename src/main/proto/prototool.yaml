@@ -1,6 +1,6 @@
 # https://github.com/protocolbuffers/protobuf/releases
 protoc:
-  version: 3.11.4
+  version: 3.17.1
 
 excludes:
   # a file inside is copied from

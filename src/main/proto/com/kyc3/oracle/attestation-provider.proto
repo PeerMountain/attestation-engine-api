@@ -1,5 +1,7 @@
 syntax = 'proto3';
 
+package com.kyc3.oracle.attestation;
+
 message AttestationProviderRegister {
   string name = 1;
   string transaction = 2;
