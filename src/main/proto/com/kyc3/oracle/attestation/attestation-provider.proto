@@ -11,3 +11,7 @@ message AttestationProviderRegister {
   AttestationProvider provider = 1;
   string transaction = 2;
 }
+
+message AttestationProviderDataRequest {
+  string address = 1;
+}
