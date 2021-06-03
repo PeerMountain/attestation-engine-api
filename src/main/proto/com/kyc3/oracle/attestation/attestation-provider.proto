@@ -2,7 +2,12 @@ syntax = 'proto3';
 
 package com.kyc3.oracle.attestation;
 
-message AttestationProviderRegister {
+message AttestationProvider {
   string name = 1;
+  string address = 2;
+}
+
+message AttestationProviderRegister {
+  AttestationProvider provider = 1;
   string transaction = 2;
 }
