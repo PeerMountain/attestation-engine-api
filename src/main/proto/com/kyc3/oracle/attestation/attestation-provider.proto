@@ -7,6 +7,15 @@ message AttestationProvider {
   string address = 2;
 }
 
+message NftSettings {
+  int32 type = 1;
+  bool perpetuity = 2;
+  int32 price = 3;
+  int64 expiration = 4;
+  string address = 5;
+  string signed_message = 6;
+}
+
 message AttestationProviderRegister {
   AttestationProvider provider = 1;
   string transaction = 2;
@@ -17,10 +26,13 @@ message AttestationProviderDataRequest {
 }
 
 message CreateNftRequest {
-  int32 type = 1;
-  bool perpetuity = 2;
-  int32 price = 3;
-  int64 expiration = 4;
-  string address = 5;
-  string signed_message = 6;
+  NftSettings nftSettings = 1;
+}
+
+message ListNftRequest {
+
+}
+
+message ListNftResponse {
+  repeated NftSettings nftSettingsList = 1;
 }
