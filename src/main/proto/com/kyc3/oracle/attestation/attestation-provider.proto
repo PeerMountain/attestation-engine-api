@@ -15,3 +15,12 @@ message AttestationProviderRegister {
 message AttestationProviderDataRequest {
   string address = 1;
 }
+
+message CreateNftRequest {
+  int32 type = 1;
+  bool perpetuity = 2;
+  int32 price = 3;
+  int64 expiration = 4;
+  string address = 5;
+  string signed_message = 6;
+}
