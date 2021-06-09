@@ -14,6 +14,13 @@ plugins {
     id("com.github.node-gradle.node") version "3.1.0"
 }
 
+repositories {
+    maven {
+        url = uri("https://gitlab.amlapi.com/api/v4/projects/KYC3/packages/maven")
+        name = "GitLab"
+    }
+}
+
 description = "Protobuf Registry"
 group = "com.kyc3"
 
@@ -67,11 +74,13 @@ publishing {
     }
     repositories {
         maven {
-            name = "GitHubPackages"
-            url = URI("https://maven.pkg.github.com/mocchi-app/mocchi-definitions")
-            credentials {
-                username = System.getenv("USERNAME")
-                password = System.getenv("TOKEN")
+            url = uri("https://gitlab.amlapi.com/api/v4/projects/57/packages/maven")
+            credentials(HttpHeaderCredentials::class.java) {
+                name = "Job-Token"
+                value = System.getenv("CI_JOB_TOKEN")
+            }
+            authentication {
+                create<HttpHeaderAuthentication>("header")
             }
         }
     }
