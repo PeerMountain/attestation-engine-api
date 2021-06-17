@@ -40,6 +40,9 @@ message ListNftResponse {
 message AttestationData {
   string customer_address = 1;
   string data = 2;
+  string hash_key_array = 3;
+  string token_uri = 4;
+  string hashed_data = 5;
 }
 
 message SubmitAttestationData {
