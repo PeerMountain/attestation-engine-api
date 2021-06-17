@@ -26,7 +26,7 @@ message AttestationProviderDataRequest {
 }
 
 message CreateNftRequest {
-  NftSettings nftSettings = 1;
+  NftSettings nft_settings = 1;
 }
 
 message ListNftRequest {
@@ -34,7 +34,7 @@ message ListNftRequest {
 }
 
 message ListNftResponse {
-  repeated NftSettings nftSettingsList = 1;
+  repeated NftSettings nft_settings_list = 1;
 }
 
 message AttestationData {
@@ -43,11 +43,12 @@ message AttestationData {
 }
 
 message SubmitAttestationData {
-  string apAddress = 2;
+  string ap_address = 2;
   string data = 1;
 }
 
 message DataForAttestationRequest {
+  string ap_address = 1;
 }
 
 message DataForAttestationResponse {
