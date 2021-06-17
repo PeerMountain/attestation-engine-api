@@ -36,3 +36,27 @@ message ListNftRequest {
 message ListNftResponse {
   repeated NftSettings nftSettingsList = 1;
 }
+
+message AttestationData {
+  string customer_address = 1;
+  string data = 2;
+}
+
+message SubmitAttestationData {
+  string apAddress = 2;
+  string data = 1;
+}
+
+message DataForAttestationRequest {
+}
+
+message DataForAttestationResponse {
+  repeated AttestationData list = 1;
+}
+
+message AttestationProviderListRequest {
+}
+
+message AttestationProviderListResponse {
+  repeated AttestationProvider providers = 1;
+}
