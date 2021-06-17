@@ -43,8 +43,9 @@ message AttestationData {
 }
 
 message SubmitAttestationData {
-  string ap_address = 2;
-  string data = 1;
+  string ap_address = 1;
+  string customer_address = 2;
+  string data = 3;
 }
 
 message DataForAttestationRequest {
