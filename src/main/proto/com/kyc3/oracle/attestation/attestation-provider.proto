@@ -38,11 +38,12 @@ message ListNftResponse {
 }
 
 message AttestationData {
-  string customer_address = 1;
-  string data = 2;
-  string hash_key_array = 3;
-  string token_uri = 4;
-  string hashed_data = 5;
+  int64 id = 1;
+  string customer_address = 2;
+  string data = 3;
+  string hash_key_array = 4;
+  string token_uri = 5;
+  string hashed_data = 6;
 }
 
 message SubmitAttestationData {
@@ -64,4 +65,17 @@ message AttestationProviderListRequest {
 
 message AttestationProviderListResponse {
   repeated AttestationProvider providers = 1;
+}
+
+message SignedAttestationDataRequest {
+  int64 attestation_data_id = 1;
+  string signed_message = 2;
+}
+
+message AttestationDataRequest {
+  string customer_address = 1;
+}
+
+message AttestationDataResponse {
+  repeated AttestationData user_data = 1;
 }
