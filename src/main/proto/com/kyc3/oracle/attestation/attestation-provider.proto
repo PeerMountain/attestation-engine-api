@@ -46,6 +46,11 @@ message AttestationData {
   string hashed_data = 6;
 }
 
+message SignedAttestationData {
+  AttestationData attestation = 1;
+  string signed_message = 2;
+}
+
 message SubmitAttestationData {
   string ap_address = 1;
   string customer_address = 2;
@@ -77,5 +82,5 @@ message AttestationDataRequest {
 }
 
 message AttestationDataResponse {
-  repeated AttestationData user_data = 1;
+  repeated SignedAttestationData user_data = 1;
 }
