@@ -52,7 +52,7 @@ message SignedAttestationData {
 }
 
 message SubmitAttestationData {
-  string ap_address = 1;
+  int64 nft_type = 1;
   string customer_address = 2;
   string data = 3;
 }
