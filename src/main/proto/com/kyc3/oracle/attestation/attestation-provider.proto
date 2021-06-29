@@ -39,11 +39,12 @@ message ListNftResponse {
 
 message AttestationData {
   int64 id = 1;
-  string customer_address = 2;
-  string data = 3;
-  string hash_key_array = 4;
-  string token_uri = 5;
-  string hashed_data = 6;
+  int32 nft_type = 2;
+  string customer_address = 3;
+  string data = 4;
+  string hash_key_array = 5;
+  string token_uri = 6;
+  string hashed_data = 7;
 }
 
 message SignedAttestationData {
