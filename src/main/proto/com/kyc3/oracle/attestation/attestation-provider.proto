@@ -32,7 +32,7 @@ message CreateNftRequest {
 }
 
 message ListNftRequest {
-
+  string ap_address = 1;
 }
 
 message ListNftResponse {
