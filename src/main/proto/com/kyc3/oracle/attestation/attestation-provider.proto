@@ -14,6 +14,7 @@ message NftSettings {
   int64 expiration = 4;
   string address = 5;
   string signed_message = 6;
+  int64 id = 7;
 }
 
 message AttestationProviderRegister {
@@ -84,4 +85,14 @@ message AttestationDataRequest {
 
 message AttestationDataResponse {
   repeated SignedAttestationData user_data = 1;
+}
+
+message ChangeNftSettingsStatusRequest {
+  int64 nft_id = 1;
+  string ap_address = 2;
+  bool activate = 3;
+}
+
+message ChangeNftSettingsStatusResponse {
+
 }
