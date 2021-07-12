@@ -15,6 +15,7 @@ message NftSettings {
   string address = 5;
   string signed_message = 6;
   int64 id = 7;
+  bool status = 8;
 }
 
 message AttestationProviderRegister {
