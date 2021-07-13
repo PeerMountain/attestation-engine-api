@@ -1,0 +1,15 @@
+syntax = 'proto3';
+
+package com.kyc3.oracle.user;
+
+message SubmitAttestationDataRequest {
+  int32 nft_type = 1;
+  string customer_address = 2;
+  string data = 3;
+}
+
+message SubmitAttestationDataResponse {
+  int32 nft_type = 1;
+  string customer_address = 2;
+  string data = 3;
+}

@@ -1,0 +1,11 @@
+syntax = 'proto3';
+
+package com.kyc3.oracle.user;
+
+message RegisterUserRequest {
+
+}
+
+message RegisterUserResponse {
+
+}

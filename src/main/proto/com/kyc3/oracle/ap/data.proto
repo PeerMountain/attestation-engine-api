@@ -1,0 +1,13 @@
+syntax = 'proto3';
+
+package com.kyc3.oracle.ap;
+
+import "com/kyc3/oracle/ap/attestation-provider.proto";
+
+message AttestationProviderDataRequest {
+  string address = 1;
+}
+
+message AttestationProviderDataResponse {
+  AttestationProvider provider = 1;
+}
