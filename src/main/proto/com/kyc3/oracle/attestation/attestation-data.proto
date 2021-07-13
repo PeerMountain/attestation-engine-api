@@ -1,0 +1,18 @@
+syntax = 'proto3';
+
+package com.kyc3.oracle.attestation;
+
+message AttestationData {
+  int64 id = 1;
+  string customer_address = 3;
+  string data = 4;
+  string hash_key_array = 5;
+  string token_uri = 6;
+  string hashed_data = 7;
+  int32 nft_type = 8;
+}
+
+message SignedAttestationData {
+  AttestationData attestation = 1;
+  string signed_message = 2;
+}

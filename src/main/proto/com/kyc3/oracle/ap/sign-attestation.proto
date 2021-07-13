@@ -1,0 +1,12 @@
+syntax = 'proto3';
+
+package com.kyc3.oracle.ap;
+
+message SignAttestationDataRequest {
+  int64 attestation_data_id = 1;
+  string signed_message = 2;
+}
+
+message SignAttestationDataResponse {
+
+}

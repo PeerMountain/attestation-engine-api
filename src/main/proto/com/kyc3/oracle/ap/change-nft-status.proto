@@ -1,0 +1,13 @@
+syntax = 'proto3';
+
+package com.kyc3.oracle.ap;
+
+message ChangeNftSettingsStatusRequest {
+  int64 nft_id = 1;
+  string ap_address = 2;
+  bool activate = 3;
+}
+
+message ChangeNftSettingsStatusResponse {
+
+}

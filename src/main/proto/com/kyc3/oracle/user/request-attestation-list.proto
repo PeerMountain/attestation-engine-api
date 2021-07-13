@@ -1,0 +1,13 @@
+syntax = 'proto3';
+
+package com.kyc3.oracle.user;
+
+import "com/kyc3/oracle/attestation/attestation-data.proto";
+
+message AttestationDataListRequest {
+  string customer_address = 1;
+}
+
+message AttestationDataListResponse {
+  repeated com.kyc3.oracle.attestation.SignedAttestationData user_data = 1;
+}
