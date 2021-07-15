@@ -1,0 +1,7 @@
+syntax = 'proto3';
+
+package com.kyc3.ap.challenge;
+
+message Challenge {
+  string data = 1;
+}

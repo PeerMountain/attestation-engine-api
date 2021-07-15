@@ -1,0 +1,15 @@
+syntax = 'proto3';
+
+package com.kyc3.ap.challenge;
+
+import "com/kyc3/ap/challenge/challenge.proto";
+
+//Oracle requests AP to generate a challenge to be signed
+message GenerateChallengeRequest {
+  string user_address = 1;
+}
+
+//AP responds with a challenge to be signed
+message GenerateChallengeResponse {
+  Challenge challenge = 1;
+}
