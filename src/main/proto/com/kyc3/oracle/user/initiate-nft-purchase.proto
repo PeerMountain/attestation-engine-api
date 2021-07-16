@@ -1,0 +1,14 @@
+syntax = 'proto3';
+
+package com.kyc3.oracle.user;
+
+message InitiateNFTPurchaseRequest {
+  int32 nft_type = 1;
+  string user_address = 2;
+}
+
+message InitiateNFTPurchaseResponse {
+  int32 nft_type = 1;
+  string user_address = 2;
+  string challenge = 3;
+}
