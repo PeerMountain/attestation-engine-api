@@ -1,0 +1,13 @@
+syntax = 'proto3';
+
+package com.kyc3.ap.challenge;
+
+message VerifyChallengeRequest {
+  string challenge = 1;
+  string signed_challenge = 2;
+  string user_address = 3;
+}
+
+message VerifyChallengeResponse {
+  string redirect_url = 1;
+}

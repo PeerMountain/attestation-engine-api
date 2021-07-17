@@ -1,0 +1,13 @@
+syntax = 'proto3';
+
+package com.kyc3.oracle.user;
+
+message ChallengeSignedRequest {
+  string challenge = 1;
+  string signed_challenge = 2;
+  string user_address = 3;
+}
+
+message ChallengeSignedResponse {
+  string redirect_url = 1;
+}
