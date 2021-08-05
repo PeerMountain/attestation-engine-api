@@ -11,3 +11,14 @@ message Message {
   // The message and its type, encoded as an Any message.
   google.protobuf.Any message = 2;
 }
+
+message SignedMessage {
+  string signature = 1;
+  Message body = 2;
+}
+
+message EncryptedMessage {
+  string from = 1;
+  string to = 2;
+  string payload = 3;
+}
