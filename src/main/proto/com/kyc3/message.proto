@@ -4,10 +4,15 @@ package com.kyc3;
 
 import "google/protobuf/any.proto";
 
-message Message {
-  // Set of FileDescriptorProtos which describe the type and its dependencies.
-  string type = 1;
+message SignedMessage {
+  string signature = 1;
+  string address = 2;
+  google.protobuf.Any message = 3;
+}
 
-  // The message and its type, encoded as an Any message.
-  google.protobuf.Any message = 2;
+message EncryptedMessage {
+  string version = 1;
+  string nonce = 2;
+  string ephemPublicKey = 3;
+  string ciphertext = 4;
 }

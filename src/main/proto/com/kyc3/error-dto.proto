@@ -1,0 +1,7 @@
+syntax = 'proto3';
+
+package com.kyc3;
+
+message ErrorDto {
+  string message = 1;
+}
