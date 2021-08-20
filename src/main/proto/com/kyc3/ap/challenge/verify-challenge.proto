@@ -6,8 +6,10 @@ message VerifyChallengeRequest {
   string challenge = 1;
   string signed_challenge = 2;
   string user_address = 3;
+  string user_public_key = 4;
 }
 
 message VerifyChallengeResponse {
-  string redirect_url = 1;
+  string user_public_key = 1;
+  string redirect_url = 2;
 }
