@@ -7,12 +7,14 @@ import "com/kyc3/ap/challenge/challenge.proto";
 //Oracle requests AP to generate a challenge to be signed
 message GenerateChallengeRequest {
   string user_address = 1;
-  int32 nft_type = 2;
+  string user_public_key = 2;
+  int32 nft_type = 3;
 }
 
 //AP responds with a challenge to be signed
 message GenerateChallengeResponse {
   Challenge challenge = 1;
   string user_address = 2;
-  int32 nft_type = 3;
+  string user_public_key = 3;
+  int32 nft_type = 4;
 }
