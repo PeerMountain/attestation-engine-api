@@ -3,17 +3,25 @@ syntax = 'proto3';
 package com.kyc3;
 
 import "google/protobuf/any.proto";
+import "com/kyc3/exchange.proto";
 
 message SignedMessage {
   string signature = 1;
   string address = 2;
-  string publicKey = 3;
+  string public_key = 3;
   google.protobuf.Any message = 4;
 }
 
 message EncryptedMessage {
   string version = 1;
   string nonce = 2;
-  string ephemPublicKey = 3;
-  string ciphertext = 4;
+  string ephem_public_key = 3;
+  string cipher_text = 4;
+}
+
+message GeneralMessage {
+  oneof body {
+    ExchangeKeysRequest exchange = 1;
+    EncryptedMessage message = 2;
+  }
 }
