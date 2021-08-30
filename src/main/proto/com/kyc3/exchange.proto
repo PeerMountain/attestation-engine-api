@@ -1,0 +1,17 @@
+syntax = 'proto3';
+
+package com.kyc3;
+
+message ExchangeKeysRequest {
+  string username = 1;
+  string public_key = 2;
+  string address = 3;
+  string public_encryption_key = 4;
+}
+
+message ExchangeKeysResponse {
+  string username = 1;
+  string public_key = 2;
+  string address = 3;
+  string public_encryption_key = 4;
+}
