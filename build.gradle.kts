@@ -96,7 +96,7 @@ protobuf {
             path = "./node_modules/ts-protoc-gen/bin/protoc-gen-ts"
         }
         id("dart") {
-//            path = "/root/.pub-cache/bin/protoc-gen-dart"
+            path = "/root/.pub-cache/bin/protoc-gen-dart"
         }
     }
 
