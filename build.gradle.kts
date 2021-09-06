@@ -8,7 +8,7 @@ plugins {
     id("java-library")
     id("maven-publish")
 
-    id("com.google.protobuf") version "0.8.11"
+    id("com.google.protobuf") version "0.8.17"
     kotlin("jvm") version "1.3.61"
     id("org.ajoberstar.grgit") version "4.0.1"
     id("com.github.node-gradle.node") version "3.1.0"
@@ -95,6 +95,9 @@ protobuf {
         id("ts") {
             path = "./node_modules/ts-protoc-gen/bin/protoc-gen-ts"
         }
+        id("dart") {
+            path = "/usr/lib/dart/bin"
+        }
     }
 
     generateProtoTasks {
@@ -108,6 +111,11 @@ protobuf {
                 id("js") {
                     option("import_style=commonjs")
                     option("binary")
+                }
+            }
+            task.plugins {
+                id("dart") {
+                    outputSubDir = "dart"
                 }
             }
         }
