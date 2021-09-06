@@ -86,6 +86,8 @@ publishing {
     }
 }
 
+val DART_PROTO_PATH = extra.properties["dart.protoc.path"] as String? ?: "/root/.pub-cache/bin/protoc-gen-dart"
+
 protobuf {
     protoc {
         artifact = "com.google.protobuf:protoc:$protoVersion"
@@ -97,6 +99,9 @@ protobuf {
         }
         id("dart") {
             path = "/root/.pub-cache/bin/protoc-gen-dart"
+        }
+        id("dart") {
+            path = DART_PROTO_PATH
         }
     }
 
