@@ -8,3 +8,6 @@ RUN sh -c 'wget -qO- https://storage.googleapis.com/download.dartlang.org/linux/
 RUN apt-get install dart
 
 ENV PATH="/usr/lib/dart/bin:${PATH}"
+
+RUN dart pub global activate protoc_plugin
+ENV PATH="/root/.pub-cache/bin/protoc-gen-dart:${PATH}"
