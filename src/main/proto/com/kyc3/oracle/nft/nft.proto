@@ -9,7 +9,8 @@ message NftSettings {
   int32 price = 4;
   int64 expiration = 5;
   string address = 6;
-  string attestation_engine = 7;
-  string signed_message = 8;
-  bool status = 9;
+  string provider = 7;
+  string attestation_engine = 8;
+  string signed_message = 9;
+  bool status = 10;
 }
