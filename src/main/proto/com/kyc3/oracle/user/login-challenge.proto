@@ -1,0 +1,10 @@
+syntax = 'proto3';
+
+message LoginChallengeRequest {
+  string address = 1;
+}
+
+message LoginChallengeResponse {
+  string address = 1;
+  string challenge = 2;
+}

@@ -5,11 +5,24 @@ package com.kyc3;
 import "google/protobuf/any.proto";
 import "com/kyc3/exchange.proto";
 
-message SignedMessage {
+message SignedAnonymousMessage {
   string signature = 1;
   string address = 2;
   string public_key = 3;
   google.protobuf.Any message = 4;
+}
+
+message SignedAddressedMessage {
+  string signature = 1;
+  string public_key = 3;
+  google.protobuf.Any message = 4;
+}
+
+message SignedMessage {
+  oneof body {
+    SignedAnonymousMessage anonymous = 1;
+    SignedAddressedMessage addressed = 2;
+  }
 }
 
 message EncryptedMessage {
