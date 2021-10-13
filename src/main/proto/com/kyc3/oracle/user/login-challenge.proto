@@ -1,5 +1,7 @@
 syntax = 'proto3';
 
+package com.kyc3.oracle.user;
+
 message LoginChallengeRequest {
   string address = 1;
 }
@@ -7,4 +9,5 @@ message LoginChallengeRequest {
 message LoginChallengeResponse {
   string address = 1;
   string challenge = 2;
+  bool registered = 3;
 }
