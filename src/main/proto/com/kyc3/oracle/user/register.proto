@@ -2,10 +2,20 @@ syntax = 'proto3';
 
 package com.kyc3.oracle.user;
 
-message RegisterUserRequest {
+message InitiateUserXMPPRegistrationRequest {
+  string address = 1;
+}
 
+message InitiateUserXMPPRegistrationResponse {
+  string address = 1;
+  string challenge = 2;
+}
+
+message RegisterUserRequest {
+  string address = 1;
+  string signed_challenge = 2;
 }
 
 message RegisterUserResponse {
-
+  string address = 1;
 }
