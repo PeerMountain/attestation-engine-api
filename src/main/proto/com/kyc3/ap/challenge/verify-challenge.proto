@@ -12,4 +12,5 @@ message VerifyChallengeRequest {
 message VerifyChallengeResponse {
   string user_public_key = 1;
   string redirect_url = 2;
+  string user_address = 3;
 }
