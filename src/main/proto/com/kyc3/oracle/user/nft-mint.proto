@@ -1,0 +1,22 @@
+syntax = 'proto3';
+
+package com.kyc3.oracle.user;
+
+message NftMintRequest {
+  // types: ["address", "uint256", "bytes", "bytes", "bytes", "bytes"]
+  // values: [
+  //          userAddress,
+  //          nonce,
+  //          encodedNotExpiredNftSettings,
+  //          encodedNotExpiredSigned,
+  //          encodedNotExpiredSigned,
+  //          encodedAttestationDataSigned
+  // ]
+  string message = 2;
+  string signature = 3;
+}
+
+
+message NftMintResponse {
+  string nft_mint_transaction_hash = 1;
+}
