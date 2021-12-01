@@ -1,0 +1,14 @@
+syntax = 'proto3';
+
+package com.kyc3.oracle.user;
+
+message DepositRequest {
+  // types: ["uint256", "uint256", "address"],
+  // values: [depositAmount, nonce, cashierAddress],
+  string message = 2;
+  string signature = 3;
+}
+
+message DepositResponse {
+  string deposit_transaction_hash = 1;
+}

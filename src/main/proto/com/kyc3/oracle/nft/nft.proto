@@ -4,10 +4,8 @@ package com.kyc3.oracle.nft;
 
 message NftSettings {
   int32 type = 1;
-  bool perpetuity = 2;
-  int32 price = 3;
-  int64 expiration = 4;
-  string attestation_provider = 5;
-  string attestation_engine = 6;
-  string signed_message = 7;
+  int32 price = 2;
+  int64 expiration = 3;
+  string attestation_provider = 4;
+  string signed_message = 5;
 }
