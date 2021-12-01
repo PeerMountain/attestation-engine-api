@@ -1,0 +1,19 @@
+syntax = 'proto3';
+
+package com.kyc3.oracle.user;
+
+message Erc20MintRequest {
+  string signed_transaction = 1;
+}
+
+message Erc20MintResponse {
+  string transaction_hash = 1;
+}
+
+message Erc20ApproveRequest {
+  string signed_transaction = 1;
+}
+
+message Erc20ApproveResponse {
+  string transaction_hash = 1;
+}
