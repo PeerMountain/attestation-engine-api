@@ -8,4 +8,7 @@ message NftSettings {
   int64 expiration = 3;
   string attestation_provider = 4;
   string signed_message = 5;
+  string name = 6;
+  string description = 7;
+  string image_url = 8;
 }
