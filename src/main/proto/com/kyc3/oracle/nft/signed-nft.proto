@@ -7,6 +7,5 @@ import "com/kyc3/oracle/nft/nft.proto";
 message SignedNftSettings {
   int64 id = 1;
   NftSettings nft = 2;
-  string attestation_engine_signature = 3;
-  bool status = 4;
+  bool status = 3;
 }
