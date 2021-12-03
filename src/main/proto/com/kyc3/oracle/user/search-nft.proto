@@ -1,0 +1,15 @@
+syntax = 'proto3';
+
+package com.kyc3.oracle.user;
+
+import "com/kyc3/oracle/nft/signed-nft.proto";
+
+message SearchNftRequest {
+  // space-separated keywords:
+  // "keyword1 keyword2 keyword3"
+  string keywords = 1;
+}
+
+message SearchNftResponse {
+  repeated com.kyc3.oracle.nft.SignedNftSettings nft_settings_list = 1;
+}
