@@ -1,0 +1,12 @@
+syntax = 'proto3';
+
+package com.kyc3.oracle.user;
+
+import "com/kyc3/oracle/nft/token.proto";
+
+message UserTokenRequest {
+}
+
+message UserTokenResponse {
+  repeated com.kyc3.oracle.nft.Token tokens = 1;
+}

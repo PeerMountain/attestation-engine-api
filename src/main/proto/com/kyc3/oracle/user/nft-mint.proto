@@ -2,6 +2,8 @@ syntax = 'proto3';
 
 package com.kyc3.oracle.user;
 
+import "com/kyc3/oracle/nft/token.proto";
+
 message NftMintRequest {
   // types: ["address", "uint256", "bytes", "bytes", "bytes", "bytes"]
   // values: [
@@ -12,11 +14,12 @@ message NftMintRequest {
   //          encodedNotExpiredSigned,
   //          encodedAttestationDataSigned
   // ]
-  string message = 2;
-  string signature = 3;
+  string message = 1;
+  string signature = 2;
 }
 
 
 message NftMintResponse {
   string nft_mint_transaction_hash = 1;
+  com.kyc3.oracle.nft.Token token = 2;
 }
