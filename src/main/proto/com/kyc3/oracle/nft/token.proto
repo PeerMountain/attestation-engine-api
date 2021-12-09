@@ -7,9 +7,11 @@ import "com/kyc3/oracle/nft/nft.proto";
 message Token {
   string holder = 1;
   int64 token_id = 2;
-  string token_uri = 3;
-  string keys = 4;
-  string settings = 5;
-  string provider = 6;
-  string data = 7;
+  int64 nft_type = 3;
+  string token_uri = 4;
+  string keys = 5;
+  string settings = 6;
+  string settings_hash = 7;
+  string provider = 8;
+  string data = 9;
 }

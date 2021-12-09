@@ -1,7 +1,6 @@
 import com.google.protobuf.gradle.*
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import org.ajoberstar.grgit.Grgit
-import java.net.URI
 
 plugins {
     idea
