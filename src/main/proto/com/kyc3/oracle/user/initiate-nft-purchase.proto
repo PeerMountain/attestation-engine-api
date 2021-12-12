@@ -2,6 +2,8 @@ syntax = 'proto3';
 
 package com.kyc3.oracle.user;
 
+import "com/kyc3/oracle/payment/invoice.proto";
+
 message InitiateNFTPurchaseRequest {
   int32 nft_type = 1;
   string user_address = 2;
@@ -11,4 +13,5 @@ message InitiateNFTPurchaseResponse {
   int32 nft_type = 1;
   string user_address = 2;
   string challenge = 3;
+  com.kyc3.oracle.payment.Invoice invoice = 4;
 }
