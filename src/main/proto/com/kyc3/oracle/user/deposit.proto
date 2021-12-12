@@ -5,8 +5,8 @@ package com.kyc3.oracle.user;
 message DepositRequest {
   // types: ["uint256", "uint256", "address"],
   // values: [depositAmount, nonce, cashierAddress],
-  string message = 2;
-  string signature = 3;
+  string message = 1;
+  string signature = 2;
 }
 
 message DepositResponse {

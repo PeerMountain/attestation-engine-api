@@ -2,10 +2,14 @@ syntax = 'proto3';
 
 package com.kyc3.oracle.user;
 
+
+import "com/kyc3/oracle/payment/payment.proto";
+
 message ChallengeSignedRequest {
   string challenge = 1;
   string signed_challenge = 2;
   string user_address = 3;
+  com.kyc3.oracle.payment.Payment payment = 4;
 }
 
 message ChallengeSignedResponse {

@@ -1,0 +1,10 @@
+syntax = 'proto3';
+
+package com.kyc3.oracle.payment;
+
+message Invoice {
+  string attestation_provider = 1;
+  int32 price = 2;
+  int64 payment_nonce = 3;
+  string cashier_address = 4;
+}
