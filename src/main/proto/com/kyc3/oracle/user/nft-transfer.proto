@@ -1,0 +1,14 @@
+syntax = 'proto3';
+
+package com.kyc3.oracle.user;
+
+message NftTransferRequest {
+  // types: ["address", "uint256", "uint256", "address"]
+  // values: [receiverAddress, tokenId, senderNonce, cashierV2InstanceAddress]
+  string message = 1;
+  string signature = 2;
+}
+
+message NftTransferResponse {
+  string transaction_hash = 1;
+}
