@@ -18,7 +18,6 @@ message NftMintRequest {
   string signature = 2;
 }
 
-
 message NftMintResponse {
   string nft_mint_transaction_hash = 1;
   com.kyc3.oracle.nft.Token token = 2;
