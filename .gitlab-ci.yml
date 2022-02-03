@@ -34,7 +34,7 @@ build:
     name: $CI_REGISTRY_IMAGE/builder:latest
   stage: build
   script:
-    - ./gradlew npmInstall build publish
+    - ./gradlew npmInstall build publishAllPublicationsToMavenRepository
 
 after_script:
   - echo "End CI"
